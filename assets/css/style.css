@@ -1,0 +1,2183 @@
+/* =========================================================
+   Jual Videotron Outdoor Jakarta
+   Premium Corporate White & Navy Theme
+   Headings: Manrope | Body: Poppins
+   ========================================================= */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --navy-950: #030d17;
+  --navy-900: #061a2e;
+  --navy-850: #082038;
+  --navy-800: #0a2540;
+  --navy-700: #0e355c;
+  --navy-600: #14487a;
+  --navy-500: #1c5d9b;
+
+  --accent: #0b5cff;
+  --accent-hover: #0048db;
+  --accent-light: #3b82f6;
+  --accent-soft: #edf4ff;
+  --accent-glow: rgba(11, 92, 255, 0.25);
+
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --grey-50: #f1f5f9;
+  --grey-100: #e2e8f0;
+  --grey-200: #cbd5e1;
+  --grey-300: #94a3b8;
+  --grey-400: #64748b;
+  --grey-600: #475569;
+  --ink: #0f172a;
+
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 10px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 48px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 12px 32px rgba(11, 92, 255, 0.28);
+
+  --container: 1200px;
+  --header-h: 78px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--grey-600);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--navy-800);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.2rem, 4.5vw, 3.6rem); }
+h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); }
+h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
+h4 { font-size: 1.05rem; }
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+::selection {
+  background: var(--navy-800);
+  color: #fff;
+}
+
+/* ---------- Layout Helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: clamp(70px, 8vw, 110px) 0;
+}
+
+.section-head {
+  max-width: 720px;
+  margin: 0 auto clamp(40px, 5vw, 60px);
+  text-align: center;
+}
+
+.section-head h2 {
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  font-size: 1.05rem;
+  color: var(--grey-400);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 16px;
+  border: 1px solid rgba(11, 92, 255, 0.12);
+}
+
+.eyebrow.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  padding: 13px 28px;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(11, 92, 255, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(11, 92, 255, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--navy-800);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.btn-light {
+  background: #ffffff;
+  color: var(--navy-800);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-light:hover {
+  background: var(--off-white);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.link-arrow span {
+  transition: transform 0.25s var(--ease);
+}
+
+.link-arrow:hover {
+  color: var(--accent-hover);
+  gap: 10px;
+}
+
+.link-arrow:hover span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   1. HEADER
+   ========================================================= */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  transition: var(--transition);
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: var(--grey-100);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--navy-800);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Dropdown */
+.has-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-toggle .chev {
+  transition: transform 0.28s var(--ease);
+}
+
+.has-dropdown.open .dropdown-toggle .chev,
+.has-dropdown:hover .dropdown-toggle .chev {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 290px;
+  background: #ffffff;
+  border: 1px solid var(--grey-100);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease),
+    visibility 0.25s var(--ease);
+  z-index: 1050;
+}
+
+@media (min-width: 769px) {
+  .has-dropdown:hover .dropdown,
+  .has-dropdown.open .dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.dropdown-item:hover {
+  background: var(--accent-soft);
+}
+
+.dropdown-item:hover strong {
+  color: var(--accent);
+}
+
+.dd-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.dropdown-item strong {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--navy-800);
+  transition: color 0.2s var(--ease);
+}
+
+.nav-cta {
+  padding: 10px 22px;
+  font-size: 0.88rem;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--grey-50);
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--navy-800);
+  border-radius: 2px;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================================================
+   2. HERO (FULL IMAGE HORIZONTAL)
+   ========================================================= */
+/* =====================================================
+   HERO HIKVISION - FULL IMAGE + GRADASI BIRU
+   ===================================================== */
+
+.hero {
+  min-height: 650px;
+  padding: 80px 7%;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 24, 65, 0.92) 0%,
+      rgba(5, 35, 85, 0.82) 30%,
+      rgba(5, 35, 85, 0.48) 58%,
+      rgba(5, 35, 85, 0.12) 82%,
+      rgba(5, 35, 85, 0) 100%
+    ),
+    url("assets/img/hikvision-hero.jpg") center center / cover no-repeat;
+}
+
+
+/* TULISAN DI ATAS GAMBAR */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 680px;
+}
+
+
+.hero-content span {
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 15px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.hero-content h1 {
+  color: #ffffff;
+
+  font-size: 56px;
+  line-height: 1.1;
+
+  margin: 15px 0 20px;
+}
+
+
+.hero-content p {
+  max-width: 620px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+
+/* TOMBOL */
+
+.hero .btn {
+  display: inline-block;
+
+  margin-top: 28px;
+  padding: 14px 25px;
+
+  background: #1464f4;
+  color: #ffffff;
+
+  text-decoration: none;
+  border-radius: 8px;
+
+  font-weight: 700;
+}
+
+
+.hero .btn:hover {
+  background: #0d47c7;
+}
+
+
+/* HP */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 600px;
+    padding: 70px 7%;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+}
+
+/* =========================================================
+   PERBAIKAN TAMPILAN KEUNGGULAN
+   CARD DI KIRI - GAMBAR DI KANAN
+========================================================= */
+
+.adv-layout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 45px !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+
+/* CARD DI KIRI */
+.adv-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  order: 1 !important;
+}
+
+/* GAMBAR DI KANAN */
+.adv-visual {
+  order: 2 !important;
+  width: 100% !important;
+}
+
+.adv-image-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 360px !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.adv-image-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 360px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* CARD */
+.adv-card {
+  width: 100% !important;
+  min-height: 105px !important;
+  padding: 22px 24px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+  border-radius: 14px !important;
+  box-sizing: border-box !important;
+}
+
+/* ICON NOMOR / ICON CARD */
+.adv-icon {
+  flex: 0 0 auto !important;
+}
+
+/* ISI CARD */
+.adv-content {
+  flex: 1 !important;
+}
+
+.adv-content h3 {
+  margin: 0 0 8px !important;
+}
+
+.adv-content p {
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* =========================================================
+   JUDUL SECTION DI BAWAHNYA
+========================================================= */
+
+.needs .section-head,
+.section-head {
+  max-width: 800px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center;
+}
+
+.section-head h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-sub {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE HP
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .adv-layout {
+    grid-template-columns: 1fr !important;
+    gap: 25px !important;
+  }
+
+  .adv-list {
+    order: 1 !important;
+  }
+
+  .adv-visual {
+    order: 2 !important;
+  }
+
+  .adv-image-wrap,
+  .adv-image-wrap img {
+    min-height: 280px !important;
+  }
+
+  .adv-card {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+}
+
+/* =========================================================
+   CARD PRODUK HIKVISION - SAMSUNG - LG
+========================================================= */
+
+.product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  max-width: 1100px !important;
+  margin: 40px auto 0 !important;
+}
+
+.product-card {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* GAMBAR PRODUK */
+.product-media {
+  width: 100% !important;
+  height: 220px !important;
+  overflow: hidden !important;
+  background: #f5f7fa !important;
+}
+
+.product-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+.product-card:hover .product-media img {
+  transform: scale(1.04) !important;
+}
+
+/* ISI CARD */
+.product-body {
+  padding: 24px !important;
+}
+
+.product-tag {
+  display: inline-block !important;
+  margin-bottom: 8px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #2563eb !important;
+}
+
+.product-body h3 {
+  margin: 0 0 10px !important;
+  font-size: 22px !important;
+}
+
+.product-body p {
+  margin: 0 0 18px !important;
+  line-height: 1.7 !important;
+  color: #64748b !important;
+}
+
+.product-link,
+.link-arrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #2563eb !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.product-link:hover,
+.link-arrow:hover {
+  color: #1d4ed8 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product-media {
+    height: 210px !important;
+  }
+}
+/* =========================================================
+   6 CARD - BERDASARKAN KEBUTUHAN
+========================================================= */
+
+.needs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  max-width: 1100px !important;
+  margin: 40px auto 0 !important;
+}
+
+/* CARD */
+.need-card {
+  position: relative !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.need-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* GAMBAR */
+.need-image {
+  width: 100% !important;
+  height: 200px !important;
+  overflow: hidden !important;
+  background: #f5f7fa !important;
+}
+
+.need-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+.need-card:hover .need-image img {
+  transform: scale(1.05) !important;
+}
+
+/* NOMOR */
+.need-num {
+  position: absolute !important;
+  top: 175px !important;
+  left: 20px !important;
+  width: 42px !important;
+  height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  font-weight: 700 !important;
+  border: 4px solid #ffffff !important;
+}
+
+/* JUDUL DAN DESKRIPSI */
+.need-card h3 {
+  margin: 28px 22px 10px !important;
+  font-size: 20px !important;
+  line-height: 1.3 !important;
+}
+
+.need-card p {
+  margin: 0 22px 24px !important;
+  color: #64748b !important;
+  line-height: 1.7 !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+  .needs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 22px !important;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE HP
+========================================================= */
+
+@media (max-width: 600px) {
+  .needs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .need-image {
+    height: 210px !important;
+  }
+
+  .need-num {
+    top: 185px !important;
+  }
+}
+
+/* =========================================================
+   FOOTER - TAMPILAN RAPI SEPERTI REFERENSI
+========================================================= */
+
+.site-footer {
+  background: #ffffff !important;
+  color: #111827 !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+/* BAGIAN UTAMA FOOTER */
+.footer-inner {
+  display: grid !important;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr !important;
+  align-items: start !important;
+  gap: 80px !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 50px 30px 40px !important;
+}
+
+/* =========================================================
+   KOLOM 1 - LOGO + DESKRIPSI
+========================================================= */
+
+.footer-brand {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-logo {
+  width: 145px !important;
+  height: auto !important;
+  display: block !important;
+  margin-bottom: 22px !important;
+}
+
+.footer-desc {
+  max-width: 270px !important;
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+/* =========================================================
+   KOLOM 2 & 3
+========================================================= */
+
+.footer-col {
+  padding-top: 5px !important;
+}
+
+.footer-col h4 {
+  margin: 0 0 14px !important;
+  color: #111827 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+/* MENU FOOTER */
+
+.footer-company ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-company li {
+  margin-bottom: 14px !important;
+}
+
+.footer-company a {
+  color: #64748b !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-company a:hover {
+  color: #2563eb !important;
+}
+
+/* =========================================================
+   KONTAK
+========================================================= */
+
+.footer-contact .contact-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.footer-contact .contact-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.footer-contact .contact-item strong {
+  color: #64748b !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+.footer-contact .contact-item span,
+.footer-contact .contact-item a {
+  color: #64748b !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+}
+
+.footer-contact .contact-item a:hover {
+  color: #2563eb !important;
+}
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-bottom {
+  border-top: 1px solid #e5e7eb !important;
+  background: #ffffff !important;
+}
+
+.footer-bottom-inner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 18px 20px !important;
+}
+
+.footer-bottom p {
+  margin: 0 !important;
+  text-align: center !important;
+  color: #64748b !important;
+  font-size: 13px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-inner {
+    grid-template-columns: 1.2fr 1fr 1fr !important;
+    gap: 35px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HP
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+    padding: 40px 25px !important;
+  }
+
+  .footer-brand {
+    align-items: flex-start !important;
+  }
+
+  .footer-logo {
+    width: 135px !important;
+  }
+
+}
+/* =========================================================
+   FOOTER - TAMPILAN RAPI 3 KOLOM
+========================================================= */
+
+.site-footer {
+  background: #ffffff !important;
+  color: #222222 !important;
+  border-top: 1px solid #eeeeee !important;
+  padding: 55px 0 0 !important;
+}
+
+/* AREA UTAMA FOOTER */
+.footer-inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr !important;
+  gap: 70px !important;
+  align-items: start !important;
+  padding-bottom: 45px !important;
+}
+
+/* =========================================================
+   KOLOM 1 - LOGO & DESKRIPSI
+========================================================= */
+
+.footer-brand {
+  max-width: 300px !important;
+}
+
+.footer-logo {
+  width: 145px !important;
+  height: auto !important;
+  display: block !important;
+  margin-bottom: 22px !important;
+}
+
+.footer-desc {
+  max-width: 280px !important;
+  margin: 0 !important;
+  color: #6b7280 !important;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   KOLOM 2 & 3
+========================================================= */
+
+.footer-col {
+  padding: 0 !important;
+}
+
+.footer-col h4 {
+  margin: 0 0 15px !important;
+  color: #111827 !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+}
+
+.footer-company ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-company li {
+  margin-bottom: 13px !important;
+}
+
+.footer-company a {
+  color: #6b7280 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: color 0.2s ease !important;
+}
+
+.footer-company a:hover {
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   KONTAK
+========================================================= */
+
+.footer-contact {
+  max-width: 260px !important;
+}
+
+.contact-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 18px !important;
+}
+
+.contact-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.contact-item strong {
+  color: #111827 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.contact-item span,
+.contact-item a {
+  color: #6b7280 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  text-decoration: none !important;
+}
+
+.contact-item a:hover {
+  color: #2563eb !important;
+}
+
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-bottom {
+  border-top: 1px solid #eeeeee !important;
+  background: #ffffff !important;
+}
+
+.footer-bottom-inner {
+  min-height: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.footer-bottom p {
+  margin: 0 !important;
+  color: #7b7b7b !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .footer-inner {
+    grid-template-columns: 1.2fr 1fr 1fr !important;
+    gap: 35px !important;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HP
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .site-footer {
+    padding-top: 40px !important;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+    padding-bottom: 35px !important;
+  }
+
+  .footer-brand,
+  .footer-contact {
+    max-width: 100% !important;
+  }
+
+  .footer-logo {
+    width: 140px !important;
+  }
+
+  .footer-bottom-inner {
+    padding: 15px 20px !important;
+  }
+
+}
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section {
+  padding: 90px 20px;
+  background: #ffffff;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.faq-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1677c8;
+}
+
+.faq-header h2 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #182235;
+}
+
+.faq-header p {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+/* FAQ LIST */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #f0f2f5;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #e1e7ef;
+}
+
+.faq-question {
+  width: 100%;
+  min-height: 62px;
+  padding: 0 22px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #202938;
+}
+
+.faq-arrow {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #357db3;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #6b7280;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding-top: 5px;
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 70px 18px;
+  }
+
+  .faq-header h2 {
+    font-size: 26px;
+  }
+
+  .faq-header p {
+    font-size: 13px;
+  }
+
+  .faq-question {
+    min-height: 58px;
+    padding: 0 17px;
+    font-size: 13px;
+  }
+
+  .faq-answer {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+.cta {
+  width: 100%;
+  background: linear-gradient(90deg, #0759a8, #1677d2, #0b4f96);
+  padding: 70px 22px;
+  color: #ffffff;
+}
+
+.cta h2 {
+  color: #ffffff;
+}
+
+.cta p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta a,
+.cta button {
+  background: #ffffff;
+  color: #12345b;
+}
+
+/* =================================================
+   HEADER
+================================================= */
+
+.main-header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  height: 76px;
+  margin: auto;
+  padding: 0 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 155px;
+  height: auto;
+  display: block;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.main-nav > a,
+.dropdown-toggle {
+  color: #222222;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.3s ease;
+}
+
+.main-nav > a:hover,
+.dropdown-toggle:hover {
+  color: #1769ff;
+}
+
+/* Dropdown */
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-toggle span {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown:hover .dropdown-toggle span {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: -20px;
+
+  width: 245px;
+  padding: 10px;
+
+  background: #ffffff;
+  border-radius: 10px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition: 0.25s ease;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px 14px;
+
+  color: #222222;
+  text-decoration: none;
+
+  font-size: 13px;
+  border-radius: 7px;
+
+  transition: 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f6ff;
+  color: #1769ff;
+}
+
+/* Tombol Header */
+
+.header-button {
+  padding: 12px 20px !important;
+
+  background: #1769ff;
+  color: #ffffff !important;
+
+  border-radius: 7px;
+
+  font-weight: 600 !important;
+}
+
+.header-button:hover {
+  background: #0d4fc7;
+}
+
+
+/* =================================================
+   HERO
+================================================= */
+
+.hero-new {
+  position: relative;
+  min-height: 560px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      #06152f 0%,
+      #0b2857 45%,
+      #1264bd 100%
+    );
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  min-height: 560px;
+
+  margin: auto;
+  padding: 70px 25px;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+/* Tulisan */
+
+.hero-content {
+  max-width: 560px;
+}
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: #7db7ff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.hero-content h1 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.08;
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.hero-content p {
+  max-width: 520px;
+
+  margin: 0 0 30px;
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Tombol */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 0 22px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.hero-btn-primary {
+  background: #1683ff;
+  color: #ffffff;
+}
+
+.hero-btn-primary:hover {
+  background: #0d6edc;
+  transform: translateY(-2px);
+}
+
+.hero-btn-secondary {
+  border: 1px solid rgba(255,255,255,0.7);
+  color: #ffffff;
+  background: transparent;
+}
+
+.hero-btn-secondary:hover {
+  background: #ffffff;
+  color: #12356b;
+}
+
+
+/* =================================================
+   GAMBAR HERO
+================================================= */
+
+.hero-image {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 650px;
+
+  height: 390px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  display: block;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+
+/* =================================================
+   RESPONSIVE
+================================================= */
+
+@media (max-width: 950px) {
+
+  .main-nav {
+    gap: 15px;
+  }
+
+  .main-nav > a,
+  .dropdown-toggle {
+    font-size: 12px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 700px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .header-container {
+    height: 68px;
+  }
+
+  .brand-logo {
+    width: 125px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hero-new {
+    min-height: auto;
+  }
+
+  .hero-container {
+    min-height: auto;
+    padding: 55px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-image img {
+    height: 260px;
+  }
+}
+
+/* ================================
+   ARTIKEL - CARD RAPI
+================================ */
+
+.article-section {
+  padding: 80px 5%;
+  background: #fff;
+}
+
+.article-section .section-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.article-section .section-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b1f3a;
+  margin-bottom: 12px;
+}
+
+.article-section .section-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* GRID ARTIKEL */
+.articles-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+.article-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e8edf3;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* GAMBAR ARTIKEL */
+.article-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ISI CARD */
+.article-content {
+  padding: 22px;
+}
+
+.article-content .article-date {
+  font-size: 12px;
+  color: #2563eb;
+  margin-bottom: 9px;
+  font-weight: 600;
+}
+
+.article-content h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  color: #0b1f3a;
+  margin-bottom: 10px;
+}
+
+.article-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 18px;
+}
+
+.article-content a {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.article-content a:hover {
+  color: #0b1f3a;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+  .articles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================================
+   HP
+================================ */
+
+@media (max-width: 600px) {
+  .article-section {
+    padding: 60px 20px;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .article-card img {
+    height: 200px;
+  }
+
+  .article-section .section-header h2 {
+    font-size: 26px;
+  }
+}
+
+/* =====================================
+   SECTION PENGENALAN
+===================================== */
+
+.intro-section {
+  padding: 80px 5%;
+  background: #ffffff;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* DESKRIPSI DI ATAS */
+.intro-content {
+  max-width: 1000px;
+  margin: 0 auto 45px;
+}
+
+.intro-label {
+  display: inline-block;
+  padding: 7px 14px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  background: #eef5ff;
+  color: #1769e0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.intro-content h2 {
+  margin: 0 0 18px;
+  font-size: 38px;
+  line-height: 1.2;
+  color: #092b52;
+  font-weight: 700;
+}
+
+.intro-content p {
+  margin: 0 0 14px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #536273;
+}
+
+/* GAMBAR DI BAWAH DESKRIPSI */
+.intro-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.intro-image img {
+  width: 100%;
+  height: 500px;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+  .intro-section {
+    padding: 60px 20px;
+  }
+
+  .intro-content {
+    margin-bottom: 30px;
+  }
+
+  .intro-content h2 {
+    font-size: 30px;
+  }
+
+  .intro-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .intro-image img {
+    height: 300px;
+  }
+}
+
+/* =========================================================
+   REVISI VISUAL GLOBAL — layout responsif dan navigasi stabil
+   ========================================================= */
+.main-header { position: sticky; top: 0; z-index: 2000; }
+.nav-dropdown { align-self: stretch; display: flex; align-items: center; }
+.dropdown-menu {
+  top: 100%; left: -14px; z-index: 2100; margin-top: 0;
+  min-width: 260px; width: max-content; max-width: min(320px, 90vw);
+  border: 1px solid #e8edf5; padding: 8px;
+}
+/* Area penghubung mencegah dropdown tertutup saat pointer menuju submenu. */
+.dropdown-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu,
+.nav-dropdown.open .dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+}
+.dropdown-menu a { white-space: normal; line-height: 1.45; }
+.dropdown-toggle { cursor: pointer; }
+
+/* Beranda: foto hero memenuhi seluruh bidang, teks tetap terbaca di sisi kiri. */
+.hero-new {
+  min-height: min(760px, calc(100svh - 76px));
+  background: #06152f;
+  isolation: isolate;
+}
+.hero-container {
+  max-width: 100%; width: 100%; min-height: inherit;
+  padding: clamp(64px, 8vw, 112px) max(6vw, calc((100vw - 1200px) / 2));
+  display: flex; align-items: center;
+}
+.hero-content { position: relative; z-index: 3; width: min(620px, 58%); max-width: 620px; }
+.hero-image {
+  position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%;
+  display: block; overflow: hidden;
+}
+.hero-image::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(3, 13, 31, .94) 0%, rgba(5, 24, 54, .82) 34%, rgba(5, 24, 54, .34) 68%, rgba(5, 24, 54, .08) 100%);
+}
+.hero-image img {
+  width: 100%; height: 100%; max-width: none; object-fit: cover;
+  object-position: center; border-radius: 0; box-shadow: none;
+}
+.hero-new .hero-container { pointer-events: none; }
+.hero-new .hero-content, .hero-new .hero-content a { pointer-events: auto; }
+
+@media (max-width: 950px) {
+  .hero-new { min-height: 620px; }
+  .hero-container { min-height: inherit; padding: 70px 6%; }
+  .hero-content { width: min(680px, 90%); }
+  .hero-image::after { background: linear-gradient(90deg, rgba(3,13,31,.92), rgba(5,24,54,.58)); }
+}
+@media (max-width: 700px) {
+  .main-nav.open { display: flex; }
+  .main-nav { z-index: 2200; }
+  .nav-dropdown { display: block; width: 100%; }
+  .nav-dropdown .dropdown-toggle { width: 100%; justify-content: space-between; }
+  .dropdown-menu {
+    position: static; display: none; width: 100%; max-width: none;
+    margin: 6px 0 0; box-shadow: none; border: 1px solid #e8edf5;
+    transform: none; opacity: 1; visibility: visible; pointer-events: auto;
+  }
+  .nav-dropdown.open .dropdown-menu { display: block; }
+  .dropdown-menu::before { display: none; }
+  .hero-new { min-height: 600px; }
+  .hero-container { min-height: 600px; padding: 58px 22px; }
+  .hero-content { width: 100%; max-width: 100%; }
+  .hero-content h1 { font-size: clamp(34px, 9vw, 44px); }
+  .hero-image img { object-position: 60% center; }
+}
+
+
+/* ===== Revisi tata letak halaman ===== */
+.home-articles-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.article-section-more { display:flex; justify-content:center; margin-top:32px; }
+.article-section-more .btn { text-decoration:none; }
+.adv-card { cursor:pointer; border:1px solid #e5eaf1; background:#fff; transition:background .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease; }
+.adv-card:hover,.adv-card.active { background:#f4f8ff; border-color:#b7cdfa; box-shadow:0 10px 28px rgba(18,87,214,.10); transform:translateY(-2px); }
+.adv-image-wrap img { transition:opacity .22s ease,transform .22s ease; }
+.why-inner { display:block !important; }
+.why-intro { max-width:800px; text-align:center; margin:0 auto 34px; }
+.why-list { list-style:none; padding:0; margin:0 auto; max-width:1200px; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }
+.why-item { display:flex; flex-direction:column; gap:14px; padding:0 0 22px; overflow:hidden; border:1px solid #e5eaf1; border-radius:16px; background:#fff; box-shadow:0 8px 25px rgba(0,0,0,.05); }
+.why-item::before { content:""; display:block; height:165px; background-size:cover; background-position:center; }
+.why-item:nth-child(1)::before { background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80'); }
+.why-item:nth-child(2)::before { background-image:url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80'); }
+.why-item:nth-child(3)::before { background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'); }
+.why-item:nth-child(4)::before { background-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80'); }
+.why-item > div { padding:0 20px; }
+.why-item .why-index { margin:0 20px; width:34px; height:34px; display:grid; place-items:center; border-radius:50%; background:#eaf1ff; color:#1456d9; font-weight:700; }
+.why-item h3 { font-family:Manrope,sans-serif; margin:0 0 8px; }
+.why-item p { margin:0; color:#667085; line-height:1.7; }
+.cta-inner { text-align:center; margin-left:auto; margin-right:auto; }
+.cta-inner .btn { display:inline-flex; justify-content:center; align-items:center; }
+.faq-arrow { font-size:0 !important; flex:0 0 28px; }
+.faq-arrow::before { content:'+'; font-size:25px; line-height:1; }
+.faq-item.active .faq-arrow { transform:none !important; }
+.faq-item.active .faq-arrow::before { content:'−'; }
+@media(max-width:900px) { .why-list { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .home-articles-grid,.why-list { grid-template-columns:1fr; } .why-item::before { height:190px; } }
+
+/* ===== Halaman kontak ===== */
+.contact-page { padding:100px 0 90px; background:#f8faff; }
+.contact-page-heading { text-align:center; max-width:720px; margin:0 auto 48px; }
+.contact-page-heading h1 { font:800 clamp(34px,4vw,48px)/1.15 Manrope,sans-serif; color:#0b1b3a; margin:12px 0; }
+.contact-page-heading p { color:#667085; line-height:1.8; }
+.contact-layout { display:grid; grid-template-columns:minmax(280px,.85fr) minmax(0,1.4fr); gap:24px; align-items:stretch; }
+.contact-cards { display:grid; gap:20px; }
+.contact-info-card,.contact-map-card { background:#fff; border:1px solid #e5eaf1; border-radius:18px; padding:28px; box-shadow:0 12px 32px rgba(15,35,75,.06); }
+.contact-info-card h2,.contact-map-card h2 { font:700 22px Manrope,sans-serif; color:#0b1b3a; margin:12px 0 8px; }
+.contact-info-card p,.contact-map-card p { color:#667085; line-height:1.75; margin:0 0 16px; }
+.contact-icon { width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#eaf1ff;color:#1456d9;font-size:25px; }
+.contact-detail { display:block;color:#667085;font-size:13px;margin-top:12px; }
+.contact-map-card { display:flex; flex-direction:column; min-height:520px; }
+.map-heading { display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:20px; }
+.map-heading a { color:#1456d9;font-weight:600;text-decoration:none;white-space:nowrap;font-size:13px; }
+.contact-map-card iframe { width:100%; flex:1; min-height:390px; border:0;border-radius:12px;background:#edf2f7; }
+@media(max-width:800px){.contact-layout{grid-template-columns:1fr}.contact-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-map-card{min-height:460px}}
+@media(max-width:560px){.contact-page{padding:70px 0}.contact-cards{grid-template-columns:1fr}.contact-info-card,.contact-map-card{padding:22px}.map-heading{flex-direction:column}.contact-map-card iframe{min-height:320px}}
+
+
+/* Shared navigation, FAQ and motion enhancements */
+.main-header.site-header{position:sticky!important;top:0;z-index:1000;width:100%;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);box-shadow:0 4px 22px rgba(16,35,58,.08);}
+.main-header .header-container{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.main-header .brand-logo{display:block;width:auto;max-width:190px;height:48px;object-fit:contain;}
+.main-header .main-nav{display:flex;align-items:center;gap:clamp(12px,2vw,28px);}
+.main-header .main-nav>a,.main-header .dropdown-toggle{display:flex;align-items:center;gap:7px;text-decoration:none;color:#172538;font:500 14px 'Poppins',sans-serif;transition:color .22s ease;}
+.main-header .main-nav>a:hover,.main-header .dropdown-toggle:hover{color:#2478b9;}
+.main-header .nav-dropdown{position:relative;display:flex;align-items:center;}
+.main-header .dropdown-menu{position:absolute;top:calc(100% + 14px);left:-14px;display:block;min-width:220px;padding:8px;background:#fff;border:1px solid #e8edf3;border-radius:12px;box-shadow:0 18px 42px rgba(20,40,65,.16);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s ease,transform .22s ease,visibility .22s;z-index:1100;}
+.main-header .dropdown-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px;}
+.main-header .nav-dropdown:hover .dropdown-menu,.main-header .nav-dropdown:focus-within .dropdown-menu,.main-header .nav-dropdown.open .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.main-header .dropdown-menu a{display:block;padding:11px 13px;border-radius:8px;color:#243449;text-decoration:none;font:500 13px 'Poppins',sans-serif;transition:background .2s ease,color .2s ease,transform .2s ease;}
+.main-header .dropdown-menu a:hover{background:#f0f7fc;color:#176eaa;transform:translateX(3px);}
+.main-header .header-button{padding:11px 17px;border-radius:8px;background:#1677b8;color:#fff!important;}
+.main-header .nav-toggle{display:none;background:none;border:0;padding:8px;}
+.main-header .nav-toggle span{display:block;width:23px;height:2px;margin:5px;background:#1b2d42;}
+.faq-item .faq-question{font-family:'Poppins',sans-serif;}
+.faq-item .faq-answer{max-height:0;overflow:hidden;opacity:0;padding-top:0;padding-bottom:0;transition:max-height .35s ease,opacity .25s ease,padding .3s ease;}
+.faq-item.active .faq-answer{max-height:420px;opacity:1;padding-top:5px;padding-bottom:0;}
+.faq-item.active .faq-arrow::before{content:'−';}
+.faq-arrow{font-size:0!important;flex:0 0 28px;transition:transform .25s ease;}
+.faq-arrow::before{content:'+';font-size:25px;line-height:1;}
+.faq-item.active .faq-arrow{transform:none!important;}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.main-header a:focus-visible,.faq-question:focus-visible{outline:3px solid #70b7ed;outline-offset:3px;border-radius:5px;}
+@media(max-width:768px){.main-header .header-container{padding:10px 16px;flex-wrap:wrap}.main-header .brand-logo{max-width:155px;height:42px}.main-header .nav-toggle{display:block;margin-left:auto}.main-header .main-nav{display:none;flex:0 0 100%;width:100%;align-items:stretch;flex-direction:column;gap:0;padding:8px 0 12px}.main-header .main-nav.open{display:flex}.main-header .main-nav>a,.main-header .dropdown-toggle{padding:12px 8px}.main-header .nav-dropdown{display:block;width:100%}.main-header .dropdown-toggle{justify-content:space-between}.main-header .dropdown-menu{position:static;display:none;min-width:0;opacity:1;visibility:visible;transform:none;box-shadow:none;border-radius:8px;margin:0 0 8px;padding:5px 8px;background:#f7fafc}.main-header .nav-dropdown.open .dropdown-menu{display:block}.main-header .dropdown-menu::before{display:none}.main-header .header-button{justify-content:center;margin-top:8px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
