@@ -45,19 +45,19 @@
       display: block;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
       gap: 30px;
     }
 
-    nav a {
+    .main-nav a {
       text-decoration: none;
       color: #111827;
       font-weight: 600;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       color: #155eef;
     }
 
@@ -161,6 +161,12 @@
       display: block;
     }
 
+    .product-card img.img-contain {
+      object-fit: contain;
+      background: #ffffff;
+      padding: 8px 0;
+    }
+
     .product-content {
       padding: 25px;
     }
@@ -230,21 +236,8 @@
     }
 
     /* FOOTER */
-    footer {
-      padding: 40px 7%;
-      text-align: center;
-      background: #ffffff;
-      border-top: 1px solid #eeeeee;
-    }
 
-    footer img {
-      width: 190px;
-      margin-bottom: 15px;
-    }
 
-    footer p {
-      color: #6b7280;
-    }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -262,11 +255,11 @@
         padding: 15px 5%;
       }
 
-      nav {
+      .main-nav {
         gap: 12px;
       }
 
-      nav a {
+      .main-nav a {
         font-size: 13px;
       }
 
@@ -298,33 +291,41 @@
 <body>
 
   <!-- HEADER -->
-  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">LG</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Samsung</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
+  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Digital Signage Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Digital Signage Samsung</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">Digital Signage LG</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
 
 
-  <!-- HERO HIKVISION -->
-  <section class="hero">
+  <!-- HERO HIKVISION (gaya sama dengan hero beranda) -->
+  <section class="hero-new hero-hikvision-new">
 
-  <div class="hero-content">
+    <div class="hero-overlay"></div>
 
-    <span>Digital Signage Hikvision</span>
+    <div class="hero-container">
 
-    <h1>
-      Digital Signage Hikvision
-    </h1>
+      <div class="hero-content">
+        <span class="hero-label">DIGITAL SIGNAGE HIKVISION</span>
 
-    <p>
-      Solusi LED display outdoor Hikvision dengan kualitas visual
-      profesional untuk kebutuhan periklanan, perusahaan, retail,
-      event, pemerintahan, dan berbagai area publik.
-    </p>
+        <h1>Digital Signage Hikvision</h1>
 
-    <a href="index.html#kontak" class="btn">
-      Konsultasi Sekarang
-    </a>
+        <p>
+          Solusi LED display outdoor Hikvision dengan kualitas visual
+          profesional untuk kebutuhan periklanan, perusahaan, retail,
+          event, pemerintahan, dan berbagai area publik.
+        </p>
 
-  </div>
+        <div class="hero-buttons">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." class="hero-btn-primary" target="_blank" rel="noopener">
+            Konsultasi Sekarang
+          </a>
+        </div>
+      </div>
 
-</section>
+      <div class="hero-image">
+        <img src="assets/img/hikvision-hero-bg.jpg" alt="Layar digital signage Hikvision menampilkan konten kuliner">
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- PRODUK HIKVISION -->
@@ -350,13 +351,13 @@
       <div class="product-card">
 
         <img
-          src="assets/img/hikvision-1.jpg"
-          alt="digital signage Outdoor Hikvision">
+          src="assets/img/hikvision-laut.png"
+          alt="digital signage Hikvision P4">
 
         <div class="product-content">
 
           <h3>
-            Hikvision Outdoor P4
+            Hikvision P4
           </h3>
 
           <p>
@@ -364,7 +365,7 @@
             untuk kebutuhan iklan dan informasi digital.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Hikvision%20P4." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
 
@@ -377,21 +378,22 @@
       <div class="product-card">
 
         <img
-          src="assets/img/hikvision-2.jpg"
-          alt="digital signage Hikvision Outdoor">
+          src="assets/img/hikvision-p5-burger.png"
+          class="img-contain"
+          alt="digital signage Hikvision P5">
 
         <div class="product-content">
 
           <h3>
-            Hikvision Outdoor P5
+            Hikvision P5
           </h3>
 
           <p>
-            Solusi LED display outdoor untuk media promosi,
+            Solusi LED display untuk media promosi,
             branding, event, dan area publik.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Hikvision%20P5." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
 
@@ -404,21 +406,21 @@
       <div class="product-card">
 
         <img
-          src="assets/img/hikvision-3.jpg"
-          alt="digital signage Outdoor Hikvision">
+          src="assets/img/hikvision-p6-makanan.png"
+          alt="digital signage Hikvision P6">
 
         <div class="product-content">
 
           <h3>
-            Hikvision Outdoor P6
+            Hikvision P6
           </h3>
 
           <p>
-            Display LED outdoor berukuran besar dengan
+            Display LED berukuran besar dengan
             visibilitas yang baik untuk berbagai kebutuhan.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Hikvision%20P6." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
 
@@ -447,7 +449,7 @@
       tim Cahaya Mustika Internasia.
     </p>
 
-    <a href="index.html#kontak" class="btn">
+    <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." class="btn" target="_blank" rel="noopener">
       Konsultasi Sekarang
     </a>
 
@@ -455,16 +457,51 @@
 
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
 
-    <img
-      src="assets/img/logo-footer.png"
-      alt="Cahaya Mustika Internasia">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Cahaya Mustika Internasia">
+          <img src="assets/img/logo-footer.png" alt="Cahaya Mustika Internasia" class="footer-logo">
+        </a>
+        <p class="footer-desc">
+          Penyedia digital signage untuk periklanan, korporasi, retail, event,
+          pemerintahan, dan area publik di Jakarta.
+        </p>
+      </div>
 
-    <p>
-      © 2026 Cahaya Mustika Internasia. All Rights Reserved.
-    </p>
+      <nav class="footer-col footer-company" aria-label="Informasi perusahaan">
+        <h4>Informasi Perusahaan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#produk">Produk</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak Kami</a></li>
+        </ul>
+      </nav>
 
+      <div class="footer-col footer-contact">
+        <h4>Kontak</h4>
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>Alamat</strong>
+            <span>Jl. Penjernihan II No.7, RT.11/RW.6,<br>Bend. Hilir, Kec. Tanah Abang<br>Kota Jakarta Pusat<br>DKI Jakarta 10210</span>
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp/Telepon</strong>
+            <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">+62 811-330-1819</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Cahaya Mustika Internasia. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>

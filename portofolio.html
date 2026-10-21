@@ -51,7 +51,7 @@
       display: block;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
       gap: 28px;
@@ -59,11 +59,11 @@
       font-weight: 600;
     }
 
-    nav a {
+    .main-nav a {
       transition: 0.2s;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       color: #1257d6;
     }
 
@@ -254,11 +254,6 @@
 
     /* ================= FOOTER ================= */
 
-    footer {
-      background: #fff;
-      padding: 45px 7% 25px;
-      border-top: 1px solid #eee;
-    }
 
     .footer-content {
       max-width: 1100px;
@@ -305,7 +300,7 @@
         gap: 12px;
       }
 
-      nav {
+      .main-nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
@@ -381,6 +376,15 @@
       .portfolio-card, .portfolio-image img { transition: none !important; }
       .portfolio-card.reveal { opacity: 1; transform: none; }
     }
+  
+    /* Gambar portofolio instalasi: tampil utuh (tidak terpotong) */
+    .portfolio-image.fit { position:relative; background:var(--fit-bg) center/cover no-repeat; }
+    .portfolio-image.fit::before { content:""; position:absolute; inset:0; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); background:rgba(0,0,0,.28); }
+    .portfolio-image.fit img { position:relative; object-fit:contain !important; object-position:center !important; }
+
+    /* Gambar portofolio memenuhi bingkai (lebih lebar, tanpa ruang kosong) */
+    .portfolio-image.fill { height:320px !important; }
+    .portfolio-image.fill img { width:100% !important; height:100% !important; object-fit:cover !important; }
   </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -392,7 +396,7 @@
 
   <!-- ================= HEADER ================= -->
 
-  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">LG</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Samsung</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
+  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Digital Signage Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Digital Signage Samsung</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">Digital Signage LG</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
 
 
   <!-- ================= PORTOFOLIO ================= -->
@@ -407,311 +411,208 @@
 
     <div class="portfolio-grid">
 
-
-      <!-- PORTOFOLIO 1 -->
-
+      <!-- PORTOFOLIO 13 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-1.jpg"
-            alt="Proyek digital signage Outdoor">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-instalasi-1-baru.jpg" alt="Digital Signage Pemasangan Dinding" style="object-position:center 38%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Outdoor Jakarta
-          </h3>
-
-          <p>
-            Instalasi digital signage outdoor untuk kebutuhan
-            media promosi dan komunikasi visual.
-          </p>
-
-          <span class="portfolio-tag">
-            Outdoor
-          </span>
-
+          <h3>Digital Signage Pemasangan Dinding</h3>
+          <p>Layar digital signage vertikal terpasang rapi pada dinding untuk menampilkan konten visual.</p>
+          <span class="portfolio-tag">Instalasi</span>
         </div>
-
       </article>
 
-
-      <!-- PORTOFOLIO 2 -->
-
+      <!-- PORTOFOLIO 14 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-2.jpg"
-            alt="Proyek digital signage Perusahaan">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-instalasi-2-baru.jpg" alt="Digital Signage Tampilan Informasi" style="object-position:center 38%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Perusahaan
-          </h3>
-
-          <p>
-            Pemasangan LED display untuk kebutuhan
-            informasi dan branding perusahaan.
-          </p>
-
-          <span class="portfolio-tag">
-            Corporate
-          </span>
-
+          <h3>Digital Signage Tampilan Informasi</h3>
+          <p>Penerapan digital signage untuk menampilkan informasi dan konten secara jelas.</p>
+          <span class="portfolio-tag">Instalasi</span>
         </div>
-
       </article>
 
-
-      <!-- PORTOFOLIO 3 -->
-
+      <!-- PORTOFOLIO 15 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-3.jpg"
-            alt="Proyek digital signage Event">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-instalasi-3-baru.jpg" alt="Proses Instalasi Digital Signage" style="object-position:center 40%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Event
-          </h3>
-
-          <p>
-            Solusi LED display untuk mendukung kebutuhan
-            visual pada berbagai kegiatan dan event.
-          </p>
-
-          <span class="portfolio-tag">
-            Event
-          </span>
-
+          <h3>Proses Instalasi Digital Signage</h3>
+          <p>Tim teknisi memasang layar digital signage dengan aman dan presisi.</p>
+          <span class="portfolio-tag">Instalasi</span>
         </div>
-
       </article>
 
-
-      <!-- PORTOFOLIO 4 -->
-
+      <!-- PORTOFOLIO 16 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-4.jpg"
-            alt="Proyek digital signage Retail">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-lg-content-management.jpg" alt="Pengaturan Konten Digital Signage" style="object-position:center 45%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Retail
-          </h3>
-
-          <p>
-            Pemasangan display digital untuk kebutuhan
-            promosi dan informasi di area retail.
-          </p>
-
-          <span class="portfolio-tag">
-            Retail
-          </span>
-
+          <h3>Pengaturan Konten Digital Signage</h3>
+          <p>Layar digital signage terpasang di dinding dengan manajemen konten dan playlist yang siap tayang.</p>
+          <span class="portfolio-tag">Instalasi</span>
         </div>
-
       </article>
 
-
-      <!-- PORTOFOLIO 5 -->
-
+      <!-- PORTOFOLIO 17 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-5.jpg"
-            alt="Proyek digital signage Area Publik">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-standing-maklumat.jpg" alt="Digital Signage Standing Informasi Layanan" style="object-position:center 40%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Area Publik
-          </h3>
-
-          <p>
-            Penggunaan LED display untuk kebutuhan
-            informasi dan komunikasi di area publik.
-          </p>
-
-          <span class="portfolio-tag">
-            Public Area
-          </span>
-
+          <h3>Digital Signage Standing Informasi Layanan</h3>
+          <p>Display standing untuk menampilkan maklumat dan informasi layanan di area lobi.</p>
+          <span class="portfolio-tag">Informasi</span>
         </div>
-
       </article>
 
-
-      <!-- PORTOFOLIO 6 -->
-
+      <!-- PORTOFOLIO 18 -->
       <article class="portfolio-card reveal">
-
-        <div class="portfolio-image">
-
-          <img
-            src="assets/img/portofolio-6.jpg"
-            alt="Proyek digital signage Advertising">
-
-        </div>
-
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-standing-integritas-1.jpg" alt="Digital Signage Standing Kampanye" style="object-position:center 42%" loading="lazy"></div>
         <div class="portfolio-content">
-
-          <h3>
-            digital signage Advertising
-          </h3>
-
-          <p>
-            Media digital outdoor untuk menampilkan
-            materi iklan dengan visual yang menarik.
-          </p>
-
-          <span class="portfolio-tag">
-            Advertising
-          </span>
-
+          <h3>Digital Signage Standing Kampanye</h3>
+          <p>Konten kampanye tampil jelas dan menarik pada display standing di area publik.</p>
+          <span class="portfolio-tag">Public Area</span>
         </div>
-
       </article>
 
-          <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="digital signage untuk Retail" loading="lazy"></div><div class="portfolio-content"><h3>digital signage untuk Retail</h3><p>Media promosi digital untuk toko dan pusat perbelanjaan</p><span class="portfolio-tag">Retail</span></div></article>
-      <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80" alt="Digital Signage Perkantoran" loading="lazy"></div><div class="portfolio-content"><h3>Digital Signage Perkantoran</h3><p>Layar informasi untuk ruang kerja dan area resepsionis</p><span class="portfolio-tag">Indoor</span></div></article>
-      <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=80" alt="digital signage untuk Event" loading="lazy"></div><div class="portfolio-content"><h3>digital signage untuk Event</h3><p>Tampilan visual untuk panggung, acara, dan konferensi</p><span class="portfolio-tag">Event</span></div></article>
-      <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80" alt="Display Informasi Publik" loading="lazy"></div><div class="portfolio-content"><h3>Display Informasi Publik</h3><p>Penyampaian informasi yang jelas untuk area publik</p><span class="portfolio-tag">Publik</span></div></article>
-      <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Layar Digital Hospitality" loading="lazy"></div><div class="portfolio-content"><h3>Layar Digital Hospitality</h3><p>Solusi display untuk hotel, restoran, dan layanan pelanggan</p><span class="portfolio-tag">Hospitality</span></div></article>
-      <article class="portfolio-card reveal"><div class="portfolio-image"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=80" alt="Instalasi LED Display" loading="lazy"></div><div class="portfolio-content"><h3>Instalasi LED Display</h3><p>Solusi layar digital sesuai kebutuhan ruang dan audiens</p><span class="portfolio-tag">Instalasi</span></div></article>
+      <!-- PORTOFOLIO 19 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-standing-integritas-2.jpg" alt="Display Standing Area Lobi" style="object-position:center 42%" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>Display Standing Area Lobi</h3>
+          <p>Layar standing vertikal dengan visual tajam untuk menyampaikan pesan ke pengunjung.</p>
+          <span class="portfolio-tag">Public Area</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 20 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-standing-integritas-3.jpg" alt="Display Standing Konten Edukasi" style="object-position:center 40%" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>Display Standing Konten Edukasi</h3>
+          <p>Display standing dengan tampilan terang dan kontras tinggi, nyaman dilihat dari berbagai sudut.</p>
+          <span class="portfolio-tag">Edukasi</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 21 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-standing-community.jpg" alt="Digital Signage Standing Promosi" style="object-position:center 40%" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>Digital Signage Standing Promosi</h3>
+          <p>Media promosi digital pada display standing untuk menarik perhatian pengunjung.</p>
+          <span class="portfolio-tag">Advertising</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 22 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image fill"><img src="assets/img/portofolio-gantung-plafon.jpg" alt="Digital Signage Gantung Plafon" style="object-position:center 50%" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>Digital Signage Gantung Plafon</h3>
+          <p>Pemasangan layar digital signage dengan bracket gantung plafon untuk area makan dan ruang publik.</p>
+          <span class="portfolio-tag">F&amp;B</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 23 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image"><img src="assets/img/kebutuhan-perusahaan.jpg" alt="Proyek digital signage Perusahaan" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>digital signage Perusahaan</h3>
+          <p>Pemasangan LED display untuk kebutuhan informasi dan branding perusahaan.</p>
+          <span class="portfolio-tag">Corporate</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 24 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image"><img src="assets/img/kebutuhan-event.jpg" alt="Proyek digital signage Event" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>digital signage Event</h3>
+          <p>Solusi LED display untuk mendukung kebutuhan visual pada berbagai kegiatan dan event.</p>
+          <span class="portfolio-tag">Event</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 25 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image"><img src="assets/img/portofolio-retail.jpg" alt="Proyek digital signage Retail" style="object-position:center 35%" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>digital signage Retail</h3>
+          <p>Pemasangan display digital untuk kebutuhan promosi dan informasi di area retail.</p>
+          <span class="portfolio-tag">Retail</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 26 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image"><img src="assets/img/kebutuhan-area-publik.jpg" alt="Proyek digital signage Area Publik" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>digital signage Area Publik</h3>
+          <p>Penggunaan display untuk kebutuhan informasi dan komunikasi di stasiun dan area publik.</p>
+          <span class="portfolio-tag">Public Area</span>
+        </div>
+      </article>
+
+      <!-- PORTOFOLIO 27 -->
+      <article class="portfolio-card reveal">
+        <div class="portfolio-image"><img src="assets/img/portofolio-cafe-restoran.jpg" alt="Proyek digital signage Cafe & Restoran" loading="lazy"></div>
+        <div class="portfolio-content">
+          <h3>digital signage Cafe &amp; Restoran</h3>
+          <p>Digital menu board dan kiosk promosi untuk cafe dan restoran.</p>
+          <span class="portfolio-tag">F&amp;B</span>
+        </div>
+      </article>
+
     </div>
 
   </section>
 
 
-  <!-- ================= CTA ================= -->
+    <!-- ================= FOOTER ================= -->
 
-  <section class="cta">
+  <footer class="site-footer">
+    <div class="container footer-inner">
 
-    <h2>
-      Punya Proyek digital signage?
-    </h2>
-
-    <p>
-      Konsultasikan kebutuhan digital signage dan LED display
-      untuk proyek Anda bersama Cahaya Mustika Internasia.
-    </p>
-
-    <a href="index.html#kontak" class="cta-button">
-      Konsultasi Sekarang
-    </a>
-
-  </section>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="footer-content">
-
-      <div class="footer-column">
-
-        <img
-          src="assets/img/logo-footer.png"
-          alt="Cahaya Mustika Internasia"
-          class="footer-logo">
-
-        <p>
-          Penyedia digital signage outdoor untuk periklanan,
-          korporasi, retail, event, pemerintahan,
-          dan area publik di Jakarta.
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Cahaya Mustika Internasia">
+          <img src="assets/img/logo-footer.png" alt="Cahaya Mustika Internasia" class="footer-logo">
+        </a>
+        <p class="footer-desc">
+          Penyedia digital signage untuk periklanan, korporasi, retail, event,
+          pemerintahan, dan area publik di Jakarta.
         </p>
-
       </div>
 
+      <nav class="footer-col footer-company" aria-label="Informasi perusahaan">
+        <h4>Informasi Perusahaan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#produk">Produk</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak Kami</a></li>
+        </ul>
+      </nav>
 
-      <div class="footer-column">
-
-        <h3>
-          Informasi Perusahaan
-        </h3>
-
-        <a href="index.html">
-          Beranda
-        </a>
-
-        <a href="index.html#produk">
-          Produk
-        </a>
-
-        <a href="portofolio.html">
-          Portofolio
-        </a>
-
-        <a href="index.html#artikel">
-          Artikel
-        </a>
-
-        <a href="index.html#kontak">
-          Kontak Kami
-        </a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h3>
-          Kontak Kami
-        </h3>
-
-        <p>
-          Alamat
-        </p>
-
-        <p>
-          Jakarta, Indonesia
-        </p>
-
-        <p>
-          WhatsApp / Telepon
-        </p>
-
-        <p>
-          0800-0000-0000
-        </p>
-
+      <div class="footer-col footer-contact">
+        <h4>Kontak</h4>
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>Alamat</strong>
+            <span>Jl. Penjernihan II No.7, RT.11/RW.6,<br>Bend. Hilir, Kec. Tanah Abang<br>Kota Jakarta Pusat<br>DKI Jakarta 10210</span>
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp/Telepon</strong>
+            <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">+62 811-330-1819</a>
+          </div>
+        </div>
       </div>
 
     </div>
 
-
-    <div class="copyright">
-      © 2026 Cahaya Mustika Internasia. All Rights Reserved.
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Cahaya Mustika Internasia. All Rights Reserved.</p>
+      </div>
     </div>
-
   </footer>
 
   <script src="assets/js/main.js"></script>

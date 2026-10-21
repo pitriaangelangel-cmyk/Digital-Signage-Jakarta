@@ -45,19 +45,19 @@
       display: block;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       align-items: center;
       gap: 30px;
     }
 
-    nav a {
+    .main-nav a {
       text-decoration: none;
       color: #111827;
       font-weight: 600;
     }
 
-    nav a:hover {
+    .main-nav a:hover {
       color: #155eef;
     }
 
@@ -234,23 +234,8 @@
     }
 
     /* FOOTER */
-    footer {
-      padding: 40px 7%;
-      text-align: center;
-      background: #ffffff;
-      border-top: 1px solid #eeeeee;
-    }
 
-    footer img {
-      width: 190px;
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 15px;
-    }
 
-    footer p {
-      color: #6b7280;
-    }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -262,7 +247,7 @@
         font-size: 38px;
       }
 
-      nav {
+      .main-nav {
         gap: 18px;
       }
     }
@@ -278,13 +263,13 @@
         width: 155px;
       }
 
-      nav {
+      .main-nav {
         justify-content: center;
         flex-wrap: wrap;
         gap: 10px 16px;
       }
 
-      nav a {
+      .main-nav a {
         font-size: 13px;
       }
 
@@ -330,25 +315,39 @@
 <body>
 
   <!-- HEADER -->
-  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">LG</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Samsung</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
+  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Digital Signage Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Digital Signage Samsung</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">Digital Signage LG</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
 
   <!-- HERO SAMSUNG -->
-  <section class="hero">
-    <div class="hero-content">
-      <span>Digital Signage Samsung</span>
+  <section class="hero-new hero-samsung-new">
 
-      <h1>Digital Signage Samsung</h1>
+    <div class="hero-overlay"></div>
 
-      <p>
-        Solusi digital signage Samsung untuk kebutuhan periklanan,
-        perusahaan, retail, event, dan area publik. Dukung komunikasi
-        visual bisnis Anda dengan tampilan digital yang profesional.
-      </p>
+    <div class="hero-container">
 
-      <a href="index.html#kontak" class="btn">
-        Konsultasi Sekarang
-      </a>
+      <div class="hero-content">
+        <span class="hero-label">DIGITAL SIGNAGE SAMSUNG</span>
+
+        <h1>Digital Signage Samsung</h1>
+
+        <p>
+          Solusi digital signage Samsung untuk kebutuhan periklanan,
+          perusahaan, retail, event, dan area publik. Dukung komunikasi
+          visual bisnis Anda dengan tampilan digital yang profesional.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." class="hero-btn-primary" target="_blank" rel="noopener">
+            Konsultasi Sekarang
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/img/samsung-hero-mall.png" alt="Layar digital signage Samsung di area mall">
+      </div>
+
     </div>
+
   </section>
 
   <!-- PRODUK SAMSUNG -->
@@ -367,7 +366,7 @@
       <!-- CARD 1 -->
       <div class="product-card">
         <img
-          src="assets/img/samsung-1.jpg"
+          src="assets/img/samsung-43-batu-lumut.png"
           alt="Samsung Digital Signage 43 Inch">
 
         <div class="product-content">
@@ -378,7 +377,7 @@
             dan konten promosi di ruang usaha maupun area komersial.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Samsung%20Digital%20Signage%2043%20Inch." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
         </div>
@@ -387,7 +386,7 @@
       <!-- CARD 2 -->
       <div class="product-card">
         <img
-          src="assets/img/samsung-2.jpg"
+          src="assets/img/samsung-55-pantai-biru.png"
           alt="Samsung Digital Signage 55 Inch">
 
         <div class="product-content">
@@ -398,7 +397,7 @@
             branding, penyampaian informasi, dan komunikasi visual.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Samsung%20Digital%20Signage%2055%20Inch." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
         </div>
@@ -407,7 +406,7 @@
       <!-- CARD 3 -->
       <div class="product-card">
         <img
-          src="assets/img/samsung-3.jpg"
+          src="assets/img/samsung-65-batu-karang-kuning.png"
           alt="Samsung Digital Signage 65 Inch">
 
         <div class="product-content">
@@ -418,7 +417,7 @@
             menyampaikan informasi dan konten visual secara menarik.
           </p>
 
-          <a href="index.html#kontak" class="btn">
+          <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20info%20detail%20Samsung%20Digital%20Signage%2065%20Inch." class="btn" target="_blank" rel="noopener">
             Lihat Detail
           </a>
         </div>
@@ -439,20 +438,57 @@
       tim Cahaya Mustika Internasia.
     </p>
 
-    <a href="index.html#kontak" class="btn">
+    <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." class="btn" target="_blank" rel="noopener">
       Konsultasi Sekarang
     </a>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <img
-      src="assets/img/logo-footer.png"
-      alt="Cahaya Mustika Internasia">
+  <footer class="site-footer">
+    <div class="container footer-inner">
 
-    <p>
-      © 2026 Cahaya Mustika Internasia. All Rights Reserved.
-    </p>
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Cahaya Mustika Internasia">
+          <img src="assets/img/logo-footer.png" alt="Cahaya Mustika Internasia" class="footer-logo">
+        </a>
+        <p class="footer-desc">
+          Penyedia digital signage untuk periklanan, korporasi, retail, event,
+          pemerintahan, dan area publik di Jakarta.
+        </p>
+      </div>
+
+      <nav class="footer-col footer-company" aria-label="Informasi perusahaan">
+        <h4>Informasi Perusahaan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#produk">Produk</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak Kami</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col footer-contact">
+        <h4>Kontak</h4>
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>Alamat</strong>
+            <span>Jl. Penjernihan II No.7, RT.11/RW.6,<br>Bend. Hilir, Kec. Tanah Abang<br>Kota Jakarta Pusat<br>DKI Jakarta 10210</span>
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp/Telepon</strong>
+            <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">+62 811-330-1819</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Cahaya Mustika Internasia. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>

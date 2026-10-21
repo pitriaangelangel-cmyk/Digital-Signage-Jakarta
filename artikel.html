@@ -25,228 +25,97 @@
 
   <style>
     /* =====================================================
-       HALAMAN ARTIKEL
+       HALAMAN ARTIKEL - FEATURED + DAFTAR + GRID FILTER
        ===================================================== */
+    .article-page { padding: 110px 0 90px; background: #fff; }
+    .art-wrap { max-width: 1120px; }
 
-    .article-page {
-      padding: 120px 0 80px;
-      background: #fff;
-    }
-
-    .article-page-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 50px;
-    }
-
-    .article-page-header .eyebrow {
-      color: #1456d9;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .article-page-header h1 {
+    .art-header { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+    .art-header .eyebrow { color: #1456d9; font-weight: 700; margin-bottom: 12px; }
+    .art-header h1 {
       font-family: "Manrope", sans-serif;
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.1;
-      margin: 0 0 18px;
-      color: #0b1b3a;
+      font-size: clamp(30px, 4vw, 44px); line-height: 1.15;
+      margin: 0 0 14px; color: #0b1b3a;
     }
+    .art-header p { font-family: "Poppins", sans-serif; color: #667085; line-height: 1.8; margin: 0; }
 
-    .article-page-header p {
-      font-family: "Poppins", sans-serif;
-      color: #667085;
-      line-height: 1.8;
-      margin: 0;
+    .art-chip {
+      display: inline-block; align-self: flex-start;
+      font-family: "Poppins", sans-serif; font-size: 11.5px; font-weight: 600;
+      color: #0b4a7a; background: #dcebf7; border-radius: 6px; padding: 3px 10px;
     }
+    .art-meta { font-family: "Poppins", sans-serif; font-size: 12.5px; color: #98a2b3; }
+    .art-meta i { font-style: normal; margin: 0 4px; }
 
-    /* GRID ARTIKEL */
-
-    .article-page-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
-      max-width: 1200px;
-      margin: 0 auto;
+    .art-top {
+      display: grid; grid-template-columns: 1.55fr 1fr; gap: 36px;
+      align-items: stretch; margin-bottom: 72px;
     }
-
-    .article-page-card {
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid #e8edf5;
-      box-shadow: 0 10px 30px rgba(15, 35, 75, 0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .art-featured, .art-card {
+      display: flex; flex-direction: column; text-decoration: none; color: inherit;
+      background: #fff; border: 1px solid #e5eaf1; border-radius: 14px; overflow: hidden;
+      transition: box-shadow .25s ease, transform .25s ease;
     }
-
-    .article-page-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(15, 35, 75, 0.13);
+    .art-featured:hover, .art-card:hover { box-shadow: 0 14px 34px rgba(15,35,75,.10); transform: translateY(-3px); }
+    .art-featured-img { aspect-ratio: 16 / 10; overflow: hidden; background: #edf2f7; }
+    .art-featured-img img, .art-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+    .art-featured:hover img, .art-card:hover img { transform: scale(1.04); }
+    .art-featured-body { display: flex; flex-direction: column; gap: 12px; padding: 22px 24px 24px; }
+    .art-featured-body h2 {
+      font-family: "Manrope", sans-serif; font-size: 22px; line-height: 1.35;
+      margin: 0; color: #0b1b3a;
     }
+    .art-featured-body p { font-family: "Poppins", sans-serif; font-size: 14px; line-height: 1.7; color: #667085; margin: 0; }
 
-    .article-page-image {
-      width: 100%;
-      height: 230px;
-      overflow: hidden;
+    .art-side { display: flex; flex-direction: column; }
+    .art-side-item {
+      display: flex; flex-direction: column; gap: 8px; flex: 1;
+      justify-content: center; padding: 16px 0; text-decoration: none;
+      border-bottom: 1px solid #e5e7eb;
     }
-
-    .article-page-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
+    .art-side-item:first-child { padding-top: 0; }
+    .art-side-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .art-side-item h3 {
+      font-family: "Manrope", sans-serif; font-size: 16px; line-height: 1.4;
+      margin: 0; color: #0b1b3a; transition: color .2s ease;
     }
+    .art-side-item:hover h3 { color: #1456d9; }
 
-    .article-page-card:hover .article-page-image img {
-      transform: scale(1.04);
+    .art-all-head {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap; margin-bottom: 28px;
     }
-
-    .article-page-content {
-      padding: 26px;
+    .art-all-head h2 { font-family: "Manrope", sans-serif; font-size: 26px; margin: 0; color: #0b1b3a; }
+    .art-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .art-pill {
+      font-family: "Poppins", sans-serif; font-size: 13px; font-weight: 500;
+      color: #475467; background: #fff; border: 1px solid #d0d5dd; border-radius: 999px;
+      padding: 7px 16px; cursor: pointer; transition: all .2s ease;
     }
+    .art-pill:hover { border-color: #1677b8; color: #1677b8; }
+    .art-pill.active { background: #0b1b3a; border-color: #0b1b3a; color: #fff; }
 
-    .article-page-meta {
-      font-family: "Poppins", sans-serif;
-      font-size: 13px;
-      color: #7b8798;
-      margin-bottom: 12px;
+    .art-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .art-card-img { aspect-ratio: 16 / 10; overflow: hidden; background: #edf2f7; }
+    .art-card-body { display: flex; flex-direction: column; gap: 10px; padding: 18px 18px 20px; flex: 1; }
+    .art-card-body h3 {
+      font-family: "Manrope", sans-serif; font-size: 16.5px; line-height: 1.4;
+      margin: 0; color: #0b1b3a;
     }
-
-    .article-page-content h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: 22px;
-      line-height: 1.35;
-      color: #0b1b3a;
-      margin: 0 0 14px;
-    }
-
-    .article-page-content p {
-      font-family: "Poppins", sans-serif;
-      font-size: 14px;
-      line-height: 1.8;
-      color: #667085;
-      margin: 0 0 20px;
-    }
-
-    .article-read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: #1456d9;
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .article-read-more:hover {
-      color: #0b3fa8;
-    }
-
-    /* ARTIKEL UTAMA */
-
-    .article-feature-page {
-      max-width: 1200px;
-      margin: 0 auto 35px;
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #e8edf5;
-      box-shadow: 0 12px 35px rgba(15, 35, 75, 0.08);
-
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-    }
-
-    .article-feature-page-image {
-      min-height: 400px;
-    }
-
-    .article-feature-page-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .article-feature-page-content {
-      padding: 45px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .article-feature-page-content .label {
-      color: #1456d9;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 14px;
-    }
-
-    .article-feature-page-content h2 {
-      font-family: "Manrope", sans-serif;
-      font-size: 32px;
-      line-height: 1.25;
-      color: #0b1b3a;
-      margin: 0 0 16px;
-    }
-
-    .article-feature-page-content p {
-      font-family: "Poppins", sans-serif;
-      color: #667085;
-      line-height: 1.8;
-      margin: 0 0 24px;
-    }
-
-    .article-feature-page-meta {
-      font-family: "Poppins", sans-serif;
-      font-size: 13px;
-      color: #7b8798;
-      margin-bottom: 18px;
-    }
-
-    /* RESPONSIVE */
+    .art-card-body .art-meta { margin-top: auto; }
 
     @media (max-width: 900px) {
-      .article-page-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .article-feature-page {
-        grid-template-columns: 1fr;
-      }
-
-      .article-feature-page-image,
-      .article-feature-page-image img {
-        min-height: 300px;
-      }
+      .art-top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 56px; }
+      .art-side-item, .art-side-item:first-child, .art-side-item:last-child { padding: 16px 0; border-bottom: 1px solid #e5e7eb; }
+      .art-side-item:last-child { border-bottom: 0; }
+      .art-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
-
     @media (max-width: 600px) {
-      .article-page {
-        padding: 100px 20px 60px;
-      }
-
-      .article-page-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .article-feature-page-content {
-        padding: 28px;
-      }
-
-      .article-feature-page-content h2 {
-        font-size: 26px;
-      }
+      .article-page { padding: 90px 0 60px; }
+      .art-wrap { padding-left: 20px; padding-right: 20px; }
+      .art-grid { grid-template-columns: 1fr; }
+      .art-featured-body h2 { font-size: 19px; }
     }
-  
-    .article-feature-page { margin-bottom:30px; }
-    .article-page-grid { max-width:1200px; }
-    .article-page-grid .article-page-card:nth-child(n+3) { display:none; }
-    @media(max-width:768px){.article-page-grid{grid-template-columns:1fr;} .article-page{padding-top:85px;}}
   </style>
 </head>
 
@@ -256,7 +125,7 @@
        HEADER
        ===================================================== -->
 
-  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">LG</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Samsung</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/6281234567890" target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
+  <header class="main-header site-header" id="site-header"><div class="header-container container"><a class="brand" href="index.html" aria-label="Beranda"><img src="assets/img/logo-header.png" alt="Cahaya Mustika Internasia" class="brand-logo"></a><button class="nav-toggle" id="nav-toggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" id="main-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><div class="nav-dropdown has-dropdown"><a href="index.html#produk" class="dropdown-toggle" aria-expanded="false">Produk <span aria-hidden="true">⌄</span></a><div class="dropdown-menu dropdown" role="menu"><a class="dropdown-item" role="menuitem" href="produk-hikvision.html">Digital Signage Hikvision</a><a class="dropdown-item" role="menuitem" href="produk-samsung.html">Digital Signage Samsung</a><a class="dropdown-item" role="menuitem" href="produk-lg.html">Digital Signage LG</a></div></div><a href="portofolio.html">Portofolio</a><a href="artikel.html">Artikel</a><a href="kontak.html">Kontak Kami</a><a class="header-button" href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">Konsultasi</a></nav></div></header>
 
 
   <!-- =====================================================
@@ -268,218 +137,85 @@
     <!-- JUDUL HALAMAN -->
 
     <section class="article-page">
+      <div class="container art-wrap">
 
-      <div class="container">
-
-        <div class="article-page-header">
-
-          <div class="eyebrow">
-            ARTIKEL
-          </div>
-
-          <h1>
-            Informasi Seputar digital signage Outdoor
-          </h1>
-
-          <p>
-            Temukan informasi, tips, dan panduan seputar digital signage outdoor
-            untuk kebutuhan periklanan, perusahaan, retail, event,
-            pemerintahan, dan area publik.
-          </p>
-
+        <div class="art-header">
+          <div class="eyebrow">ARTIKEL</div>
+          <h1>Informasi Seputar digital signage Outdoor</h1>
+          <p>Temukan informasi, tips, dan panduan seputar digital signage outdoor untuk kebutuhan periklanan, perusahaan, retail, event, pemerintahan, dan area publik.</p>
         </div>
 
-
-        <!-- =================================================
-             ARTIKEL UTAMA
-             ================================================= -->
-
-        <article class="article-feature-page">
-
-          <div class="article-feature-page-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=85"
-              alt="digital signage outdoor dan teknologi LED"
-            >
-
+        <div class="art-top">
+          <a href="#" class="art-featured" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+            <div class="art-featured-img"><img src="assets/img/kebutuhan-periklanan.jpg" alt="Memilih Pitch LED digital signage Outdoor yang Tepat untuk Lokasi Anda" loading="lazy"></div>
+            <div class="art-featured-body"><span class="art-chip">Panduan</span><h2>Memilih Pitch LED digital signage Outdoor yang Tepat untuk Lokasi Anda</h2><p>Jarak pandang audiens menentukan tingkat kerapatan piksel yang ideal. Pelajari cara menyesuaikan pitch P4 hingga P10 dengan kondisi lokasi dan tujuan tampilan.</p><span class="art-meta">12 September 2026 <i>•</i> 6 mnt baca</span></div>
+          </a>
+          <div class="art-side">
+            <a href="#" class="art-side-item" onclick="alert('Artikel sedang dipersiapkan.'); return false;"><span class="art-chip">Perawatan</span><h3>Tips Perawatan digital signage Outdoor agar Awet Bertahun-tahun</h3><span class="art-meta">5 September 2026 <i>•</i> 4 mnt baca</span></a>
+            <a href="#" class="art-side-item" onclick="alert('Artikel sedang dipersiapkan.'); return false;"><span class="art-chip">Bisnis</span><h3>Menghitung ROI Iklan digital signage untuk Bisnis Anda</h3><span class="art-meta">28 Agustus 2026 <i>•</i> 5 mnt baca</span></a>
+            <a href="#" class="art-side-item" onclick="alert('Artikel sedang dipersiapkan.'); return false;"><span class="art-chip">Instalasi</span><h3>Tahapan Instalasi digital signage Outdoor yang Aman</h3><span class="art-meta">20 Agustus 2026 <i>•</i> 4 mnt baca</span></a>
+            <a href="#" class="art-side-item" onclick="alert('Artikel sedang dipersiapkan.'); return false;"><span class="art-chip">Panduan</span><h3>Perbedaan digital signage Indoor dan Outdoor yang Perlu Diketahui</h3><span class="art-meta">12 Agustus 2026 <i>•</i> 5 mnt baca</span></a>
           </div>
+        </div>
 
-          <div class="article-feature-page-content">
+        <div class="art-all-head">
+          <h2>Semua Artikel</h2>
+        </div>
 
-            <div class="label">
-              Artikel Pilihan
-            </div>
-
-            <div class="article-feature-page-meta">
-              12 September 2026 · 6 menit baca
-            </div>
-
-            <h2>
-              Memilih Pitch LED digital signage Outdoor
-              yang Tepat untuk Lokasi Anda
-            </h2>
-
-            <p>
-              Jarak pandang audiens menentukan tingkat kerapatan piksel
-              yang ideal. Pelajari cara menyesuaikan pitch P4 hingga P10
-              dengan kondisi lokasi dan tujuan tampilan.
-            </p>
-
-            <a
-              href="#"
-              class="article-read-more"
-              onclick="alert('Artikel sedang dipersiapkan.'); return false;"
-            >
-              Baca Artikel
-              <span>→</span>
+        <div class="art-grid" id="art-grid">
+            <a href="#" class="art-card" data-cat="Panduan" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-periklanan.jpg" alt="Memilih Pitch LED digital signage Outdoor yang Tepat untuk Lokasi Anda" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Panduan</span><h3>Memilih Pitch LED digital signage Outdoor yang Tepat untuk Lokasi Anda</h3><span class="art-meta">12 September 2026 <i>•</i> 6 mnt baca</span></div>
             </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- =================================================
-             DAFTAR ARTIKEL
-             ================================================= -->
-
-        <div class="article-page-grid">
-
-
-          <!-- ARTIKEL 1 -->
-
-          <article class="article-page-card">
-
-            <div class="article-page-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
-                alt="Perawatan digital signage outdoor"
-              >
-
-            </div>
-
-            <div class="article-page-content">
-
-              <div class="article-page-meta">
-                5 September 2026 · 4 menit
-              </div>
-
-              <h2>
-                Tips Perawatan digital signage Outdoor
-                agar Awet Bertahun-tahun
-              </h2>
-
-              <p>
-                Pelajari langkah sederhana untuk menjaga performa
-                digital signage outdoor agar tetap optimal dan memiliki
-                usia penggunaan yang panjang.
-              </p>
-
-              <a
-                href="#"
-                class="article-read-more"
-                onclick="alert('Artikel sedang dipersiapkan.'); return false;"
-              >
-                Baca Artikel →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- ARTIKEL 2 -->
-
-          <article class="article-page-card">
-
-            <div class="article-page-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85"
-                alt="Bisnis dan digital signage"
-              >
-
-            </div>
-
-            <div class="article-page-content">
-
-              <div class="article-page-meta">
-                28 Agustus 2026 · 5 menit
-              </div>
-
-              <h2>
-                Menghitung ROI Iklan digital signage
-                untuk Bisnis Anda
-              </h2>
-
-              <p>
-                Ketahui cara memperkirakan keuntungan investasi
-                penggunaan digital signage sebagai media promosi dan
-                komunikasi visual bisnis.
-              </p>
-
-              <a
-                href="#"
-                class="article-read-more"
-                onclick="alert('Artikel sedang dipersiapkan.'); return false;"
-              >
-                Baca Artikel →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- ARTIKEL 3 -->
-
-          <article class="article-page-card">
-
-            <div class="article-page-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=85"
-                alt="Instalasi digital signage outdoor"
-              >
-
-            </div>
-
-            <div class="article-page-content">
-
-              <div class="article-page-meta">
-                20 Agustus 2026 · 4 menit
-              </div>
-
-              <h2>
-                Tahapan Instalasi digital signage
-                Outdoor yang Aman
-              </h2>
-
-              <p>
-                Kenali tahapan instalasi digital signage outdoor mulai dari
-                persiapan lokasi hingga pemasangan dan pengujian sistem.
-              </p>
-
-              <a
-                href="#"
-                class="article-read-more"
-                onclick="alert('Artikel sedang dipersiapkan.'); return false;"
-              >
-                Baca Artikel →
-              </a>
-
-            </div>
-
-          </article>
-
-
+            <a href="#" class="art-card" data-cat="Perawatan" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-perusahaan.jpg" alt="Tips Perawatan digital signage Outdoor agar Awet Bertahun-tahun" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Perawatan</span><h3>Tips Perawatan digital signage Outdoor agar Awet Bertahun-tahun</h3><span class="art-meta">5 September 2026 <i>•</i> 4 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Bisnis" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/portofolio-outdoor-jakarta.jpg" alt="Menghitung ROI Iklan digital signage untuk Bisnis Anda" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Bisnis</span><h3>Menghitung ROI Iklan digital signage untuk Bisnis Anda</h3><span class="art-meta">28 Agustus 2026 <i>•</i> 5 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Instalasi" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-area-publik.jpg" alt="Tahapan Instalasi digital signage Outdoor yang Aman" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Instalasi</span><h3>Tahapan Instalasi digital signage Outdoor yang Aman</h3><span class="art-meta">20 Agustus 2026 <i>•</i> 4 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Panduan" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/digital-signage-1.jpg" alt="Perbedaan digital signage Indoor dan Outdoor yang Perlu Diketahui" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Panduan</span><h3>Perbedaan digital signage Indoor dan Outdoor yang Perlu Diketahui</h3><span class="art-meta">12 Agustus 2026 <i>•</i> 5 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Konten" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-event.jpg" alt="Cara Membuat Konten digital signage yang Menarik Perhatian" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Konten</span><h3>Cara Membuat Konten digital signage yang Menarik Perhatian</h3><span class="art-meta">3 Agustus 2026 <i>•</i> 4 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Panduan" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-pemerintahan.jpg" alt="Menentukan Ukuran digital signage Sesuai Jarak Pandang" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Panduan</span><h3>Menentukan Ukuran digital signage Sesuai Jarak Pandang</h3><span class="art-meta">25 Juli 2026 <i>•</i> 6 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Bisnis" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/kebutuhan-retail.jpg" alt="digital signage untuk Retail: Meningkatkan Perhatian Pengunjung" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Bisnis</span><h3>digital signage untuk Retail: Meningkatkan Perhatian Pengunjung</h3><span class="art-meta">16 Juli 2026 <i>•</i> 5 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Perawatan" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/hero-videotron-outdoor.jpg" alt="Mengenal Tingkat Ketahanan Cuaca pada digital signage Outdoor" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Perawatan</span><h3>Mengenal Tingkat Ketahanan Cuaca pada digital signage Outdoor</h3><span class="art-meta">8 Juli 2026 <i>•</i> 4 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Teknologi" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/portofolio-cafe-restoran.jpg" alt="Mengelola Konten digital signage Secara Terpusat" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Teknologi</span><h3>Mengelola Konten digital signage Secara Terpusat</h3><span class="art-meta">29 Juni 2026 <i>•</i> 5 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Instalasi" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/portofolio-retail.jpg" alt="Memilih Struktur dan Dudukan digital signage yang Tepat" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Instalasi</span><h3>Memilih Struktur dan Dudukan digital signage yang Tepat</h3><span class="art-meta">18 Juni 2026 <i>•</i> 4 mnt baca</span></div>
+            </a>
+            <a href="#" class="art-card" data-cat="Bisnis" onclick="alert('Artikel sedang dipersiapkan.'); return false;">
+              <div class="art-card-img"><img src="assets/img/digital-signage-3.jpg" alt="Anggaran digital signage: Komponen Biaya yang Perlu Diperhitungkan" loading="lazy"></div>
+              <div class="art-card-body"><span class="art-chip">Bisnis</span><h3>Anggaran digital signage: Komponen Biaya yang Perlu Diperhitungkan</h3><span class="art-meta">9 Juni 2026 <i>•</i> 5 mnt baca</span></div>
+            </a>
         </div>
 
       </div>
-
     </section>
+    
 
   </main>
 
@@ -489,112 +225,50 @@
        ===================================================== -->
 
   <footer class="site-footer">
+    <div class="container footer-inner">
 
-    <div class="container">
-
-      <div class="footer-inner">
-
-        <!-- LOGO & DESKRIPSI -->
-
-        <div class="footer-brand">
-
-          <a href="index.html">
-            <img
-              src="assets/img/logo-footer.png"
-              alt="Cahaya Mustika Internasia"
-              class="footer-logo"
-            >
-          </a>
-
-          <p>
-            Penyedia digital signage outdoor untuk periklanan,
-            korporasi, retail, event, pemerintahan,
-            dan area publik di Jakarta.
-          </p>
-
-        </div>
-
-
-        <!-- NAVIGASI FOOTER -->
-
-        <div class="footer-column">
-
-          <h3>
-            Navigasi
-          </h3>
-
-          <ul>
-
-            <li>
-              <a href="index.html#beranda">
-                Beranda
-              </a>
-            </li>
-
-            <li>
-              <a href="index.html#produk">
-                Produk
-              </a>
-            </li>
-
-            <li>
-              <a href="portofolio.html">
-                Portofolio
-              </a>
-            </li>
-
-            <li>
-              <a href="artikel.html">
-                Artikel
-              </a>
-            </li>
-
-            <li>
-              <a href="index.html#kontak">
-                Kontak Kami
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-
-        <!-- INFORMASI PERUSAHAAN -->
-
-        <div class="footer-column">
-
-          <h3>
-            Informasi Perusahaan
-          </h3>
-
-          <p>
-            <strong>Alamat</strong><br>
-            Jakarta, Indonesia
-          </p>
-
-          <p>
-            <strong>WhatsApp / Telepon</strong><br>
-            +62 812 3456 7890
-          </p>
-
-        </div>
-
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Cahaya Mustika Internasia">
+          <img src="assets/img/logo-footer.png" alt="Cahaya Mustika Internasia" class="footer-logo">
+        </a>
+        <p class="footer-desc">
+          Penyedia digital signage untuk periklanan, korporasi, retail, event,
+          pemerintahan, dan area publik di Jakarta.
+        </p>
       </div>
 
+      <nav class="footer-col footer-company" aria-label="Informasi perusahaan">
+        <h4>Informasi Perusahaan</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html#produk">Produk</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="artikel.html">Artikel</a></li>
+          <li><a href="kontak.html">Kontak Kami</a></li>
+        </ul>
+      </nav>
 
-      <!-- COPYRIGHT -->
-
-      <div class="footer-bottom">
-
-        <p>
-          © 2026 Cahaya Mustika Internasia. All Rights Reserved.
-        </p>
-
+      <div class="footer-col footer-contact">
+        <h4>Kontak</h4>
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>Alamat</strong>
+            <span>Jl. Penjernihan II No.7, RT.11/RW.6,<br>Bend. Hilir, Kec. Tanah Abang<br>Kota Jakarta Pusat<br>DKI Jakarta 10210</span>
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp/Telepon</strong>
+            <a href="https://wa.me/628113301819?text=Halo%20Cahaya%20Mustika%20Internasia%2C%20saya%20ingin%20konsultasi%20mengenai%20digital%20signage." target="_blank" rel="noopener">+62 811-330-1819</a>
+          </div>
+        </div>
       </div>
 
     </div>
 
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 Cahaya Mustika Internasia. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
 
 
